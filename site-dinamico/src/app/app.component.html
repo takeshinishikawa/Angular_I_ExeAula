@@ -1,4 +1,4 @@
-<app-header [search]="data.search"></app-header>
+<app-header [search]="data.search" (searchEventEmitter)="onSearchSubmitted($event)"></app-header>
 
 <!-- Carousel -->
 <app-carousel></app-carousel>
@@ -9,7 +9,7 @@
 <!-- End Features -->
 
 <!-- About -->
-<app-about [aboutData]="data.about"></app-about>
+<app-about [aboutData]="data.about" (elementCreated)="onElementCreated($event)"></app-about>
 <!-- End About -->
 
 <!-- Address -->

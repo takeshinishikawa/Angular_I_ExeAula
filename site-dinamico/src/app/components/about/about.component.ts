@@ -1,15 +1,19 @@
 import { AboutSectionData } from './../../models/about-section-data.model';
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-about',
   templateUrl: './about.component.html',
   styleUrls: ['./about.component.css']
 })
-export class AboutComponent {
+export class AboutComponent implements OnInit {
   @Input () public aboutData!: AboutSectionData;
+  @Output() public elementCreated: EventEmitter<string> = new EventEmitter<string>();
 
   //private companyName: string = "HexaVem Ltda";
+  ngOnInit() {
+    this.elementCreated.emit('about');
+  }
 
   public getCompanyInfo(): string {
     return `
