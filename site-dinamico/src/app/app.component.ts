@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { FormGroup } from '@angular/forms';
 import { AppData } from './models/app-data.model';
 
 @Component({
@@ -59,5 +60,9 @@ export class AppComponent {
 
   onSearchSubmitted(element: string): void {
     console.log("Você buscou por: ", element);
+  }
+
+  onRegisterSubmitted(formData: FormGroup) : void{
+    console.log(formData.value);
   }
 }

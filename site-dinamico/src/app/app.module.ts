@@ -1,3 +1,4 @@
+import { RegisterComponent } from './components/register/register.component';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -12,7 +13,7 @@ import { AboutComponent } from './components/about/about.component';
 import { AddressComponent } from './components/address/address.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { ButtonComponent } from './components/button/button.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -25,12 +26,14 @@ import { FormsModule } from '@angular/forms';
     AboutComponent,
     AddressComponent,
     ContactComponent,
-    ButtonComponent
+    ButtonComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
