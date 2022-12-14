@@ -1,151 +1,166 @@
 <section id="register" class="my-5 d-flex">
   <form
-    [formGroup]="registerData"
-    class="container col-12"
+    [formGroup]="formRegisterData"
+    class="container"
     (ngSubmit)="submitForm()"
   >
     <h1 class="text-center mb-4">Cadastro</h1>
-    <div class="mb-3 form-group w-50">
-      <label for="name" class="col-form-label">Nome</label>
-      <input
-        type="name"
-        class="form-control"
-        id="name"
-        placeholder="Fulano"
-        formControlName="registerData.name"
-      />
+    <div class="mb-3">
+      <div class="row mb-3">
+        <div class="col-4 form-group">
+          <label for="name" class="col-form-label">Nome</label>
+          <input
+            type="name"
+            class="form-control"
+            id="name"
+            placeholder="Nome"
+            formControlName="name"
+          />
+        </div>
+        <div class="col-4 form-group">
+          <label for="cpf" class="form-label">Cpf</label>
+          <input
+            type="text"
+            class="form-control"
+            id="Cpf"
+            placeholder="XXX.XXX.XXX-XX"
+            formControlName="cpf"
+          />
+        </div>
+        <div class="col-4 form-group">
+          <label for="birthDate" class="form-label">Data de Nascimento</label>
+          <input
+            type="date"
+            class="form-control"
+            id="birthDate"
+            placeholder="XX/XX/XXXX"
+            formControlName="birthDate"
+          />
+        </div>
+      </div>
+      <div formGroupName="address">
+        <div class="row mb-3">
+          <div class="col-6 form-group">
+            <label for="street" class="form-label">Logradouro</label>
+            <input
+              type="text"
+              class="form-control"
+              id="street"
+              placeholder="Logradouro"
+              formControlName="street"
+            />
+          </div>
+          <div class="col-2 form-group">
+            <label for="number" class="form-label">Número</label>
+            <input
+              type="number"
+              class="form-control"
+              id="number"
+              placeholder="XXX"
+              formControlName="number"
+            />
+          </div>
+          <div class="col-2 form-group">
+            <label for="complement" class="form-label">Complemento</label>
+            <input
+              type="text"
+              class="form-control"
+              id="complement"
+              placeholder="Apto XX - Bloco X"
+              formControlName="complement"
+            />
+          </div>
+          <div class="col-2 form-group">
+            <label for="zipCode" class="form-label">CEP</label>
+            <input
+              type="text"
+              class="form-control"
+              id="zipCode"
+              placeholder="XXXXX-XXX"
+              formControlName="zipCode"
+            />
+          </div>
+        </div>
+        <div class="row mb-3">
+          <div class="col-4 form-group">
+            <label for="district" class="form-label">Bairro</label>
+            <input
+              type="text"
+              class="form-control"
+              id="district"
+              placeholder="Bairro"
+              formControlName="district"
+            />
+          </div>
+          <div class="col-4 form-group">
+            <label for="city" class="form-label">Cidade</label>
+            <input
+              type="text"
+              class="form-control"
+              id="city"
+              placeholder="Cidade"
+              formControlName="city"
+            />
+          </div>
+          <div class="col-4 form-group">
+            <label for="state" class="form-label">Estado</label>
+            <input
+              type="text"
+              class="form-control"
+              id="state"
+              placeholder="Estado"
+              formControlName="state"
+            />
+          </div>
+        </div>
+      </div>
+      <div class="row mb-3">
+        <div class="col-6 form-group">
+          <label for="phone" class="form-label">Telefone</label>
+          <input
+            type="tel"
+            class="form-control"
+            id="phone"
+            placeholder="XX XXXXX-XXXX"
+            formControlName="phone"
+          />
+        </div>
+        <div class="col-6 form-group">
+          <label for="registerEmail" class="form-label">Email</label>
+          <input
+            type="email"
+            class="form-control"
+            id="registerEmail"
+            placeholder="email@example.com"
+            formControlName="email"
+          />
+        </div>
+      </div>
+      <div class="row mb-3">
+        <div class="col-6 form-group">
+          <label for="user" class="form-label">Usuário</label>
+          <input
+            type="text"
+            class="form-control"
+            id="user"
+            placeholder="Usuário"
+            formControlName="user"
+          />
+        </div>
+        <div class="col-6 form-group">
+          <label for="password" class="form-label">Senha</label>
+          <input
+            type="password"
+            class="form-control"
+            id="password"
+            placeholder="Senha"
+            formControlName="password"
+          />
+        </div>
+      </div>
+      <button class="btn btn-primary" [disabled]="!formRegisterData.valid">
+        Enviar
+      </button>
     </div>
-    <div class="mb-3 form-group w-25">
-      <label for="cpf" class="form-label">Cpf</label>
-      <input
-        type="text"
-        class="form-control"
-        id="cpf"
-        placeholder="XXX.XXX.XXX-XX"
-        formControlName="registerData.cpf"
-      />
-    </div>
-    <div class="mb-3 form-group w-25">
-      <label for="birthDate" class="form-label">Data de Nascimento</label>
-      <input
-        type="date"
-        class="form-control"
-        id="birthDate"
-        placeholder="XX/XX/XXXX"
-        formControlName="registerData.birthDate"
-      />
-    </div>
-    <div class="mb-3 form-group w-50">
-      <label for="street" class="form-label">Logradouro</label>
-      <input
-        type="text"
-        class="form-control"
-        id="street"
-        placeholder="Logradouro"
-        formControlName="registerData.street"
-      />
-    </div>
-    <div class="mb-3 form-group w-25">
-      <label for="number" class="form-label">Número</label>
-      <input
-        type="text"
-        class="form-control"
-        id="number"
-        placeholder="XXX"
-        formControlName="registerData.number"
-      />
-    </div>
-    <div class="mb-3 form-group w-25">
-      <label for="complement" class="form-label">Complemento</label>
-      <input
-        type="text"
-        class="form-control"
-        id="complement"
-        placeholder="apto XX"
-        formControlName="registerData.complement"
-      />
-    </div>
-    <div class="mb-3 form-group w-25">
-      <label for="district" class="form-label">Bairro</label>
-      <input
-        type="text"
-        class="form-control"
-        id="district"
-        placeholder="Bairro"
-        formControlName="registerData.district"
-      />
-    </div>
-    <div class="mb-3 form-group w-50">
-      <label for="city" class="form-label">Cidade</label>
-      <input
-        type="text"
-        class="form-control"
-        id="city"
-        placeholder="Bairro"
-        formControlName="registerData.city"
-      />
-    </div>
-    <div class="mb-3 form-group w-25">
-      <label for="state" class="form-label">Estado</label>
-      <input
-        type="text"
-        class="form-control"
-        id="state"
-        placeholder="Estado"
-        formControlName="registerData.state"
-      />
-    </div>
-    <div class="mb-3 form-group w-25">
-      <label for="zipCode" class="form-label">CEP</label>
-      <input
-        type="text"
-        class="form-control"
-        id="zipCode"
-        placeholder="XXXXX-XXX"
-        formControlName="registerData.zipCode"
-      />
-    </div>
-    <div class="mb-3 form-group w-25">
-      <label for="phone" class="form-label">Telefone</label>
-      <input
-        type="tel"
-        class="form-control"
-        id="phone"
-        placeholder="XX XXXXX-XXXX"
-        formControlName="registerData.phone"
-      />
-    </div>
-    <div class="mb-3 form-group w-25">
-      <label for="email" class="form-label">Email</label>
-      <input
-        type="email"
-        class="form-control"
-        id="email"
-        placeholder="email@example.com"
-        formControlName="registerData.email"
-      />
-    </div>
-    <div class="mb-3 form-group w-25">
-      <label for="user" class="form-label">Usuário</label>
-      <input
-        type="text"
-        class="form-control"
-        id="user"
-        placeholder="usuário"
-        formControlName="registerData.user"
-      />
-    </div>
-    <div class="mb-3 form-group w-25">
-      <label for="password" class="form-label">Senha</label>
-      <input
-        type="password"
-        class="form-control"
-        id="password"
-        placeholder="xxxxxxxxxx"
-        formControlName="registerData.password"
-      />
-    </div>
-
-    <button class="btn btn-primary" [disabled]="!registerData.valid">Enviar</button>
   </form>
 </section>

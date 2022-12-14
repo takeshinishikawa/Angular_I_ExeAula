@@ -1,3 +1,4 @@
+import { RegisterDataContact } from './models/register-data';
 import { Component } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 import { AppData } from './models/app-data.model';
@@ -62,7 +63,7 @@ export class AppComponent {
     console.log("Você buscou por: ", element);
   }
 
-  onRegisterSubmitted(formData: FormGroup) : void{
-    console.log(formData.value);
+  onRegisterSubmitted(formData: RegisterDataContact) : void{
+    console.log(formData);
   }
 }
