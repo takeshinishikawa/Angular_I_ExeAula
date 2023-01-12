@@ -6,4 +6,6 @@ export interface AddressData {
   city: string;
   district: string;
   zipCode: string;
+  foundationDate: string;
+  annualRevenue: number;
 }

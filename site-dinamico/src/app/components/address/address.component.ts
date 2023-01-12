@@ -1,7 +1,8 @@
 import { AddressSectionData } from './../../models/address-section-data.model';
 import { AddressData } from './../../models/address-data-model.ts';
 import { Component, Input } from '@angular/core';
-
+import { LocaleCurrencyPipe } from 'src/app/pipes/locale-currency.pipe';
+import { ZipCodeMaskPipe } from 'src/app/pipes/zip-code-mask.pipe';
 
 @Component({
   selector: 'app-address',

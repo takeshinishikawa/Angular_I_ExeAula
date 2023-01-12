@@ -49,7 +49,9 @@ export class AppComponent {
         state: "AC",
         city: "Rio Branco",
         district: "Conjunto Castelo Branco",
-        zipCode: "69911-262"
+        zipCode: "699112",
+        foundationDate: '11/25/1926',
+        annualRevenue: 1000000
       }
     },
     search: "",

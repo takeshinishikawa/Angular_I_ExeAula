@@ -12,30 +12,66 @@
           <input
             type="name"
             class="form-control"
+            [ngClass]="{
+              'is-invalid':
+              formRegisterData.controls['name'].errors &&
+              formRegisterData.controls['name'].touched}"
             id="name"
             placeholder="Nome"
             formControlName="name"
           />
+          <span
+            class="invalid-feedback"
+            *ngIf="
+              formRegisterData.controls['name'].errors &&
+              formRegisterData.controls['name'].touched
+            "
+            >O campo Nome é obrigatório.</span
+          >
         </div>
         <div class="col-4 form-group">
           <label for="cpf" class="form-label">Cpf</label>
           <input
             type="text"
             class="form-control"
+            [ngClass]="{
+              'is-invalid':
+              formRegisterData.controls['cpf'].errors &&
+              formRegisterData.controls['cpf'].touched}"
             id="Cpf"
             placeholder="XXX.XXX.XXX-XX"
             formControlName="cpf"
           />
+          <span
+            class="invalid-feedback"
+            *ngIf="
+              formRegisterData.controls['cpf'].errors &&
+              formRegisterData.controls['cpf'].touched
+            "
+            >O campo CPF é obrigatório.</span
+          >
         </div>
         <div class="col-4 form-group">
           <label for="birthDate" class="form-label">Data de Nascimento</label>
           <input
             type="date"
             class="form-control"
+            [ngClass]="{
+              'is-invalid':
+              formRegisterData.controls['birthDate'].errors &&
+              formRegisterData.controls['birthDate'].touched}"
             id="birthDate"
             placeholder="XX/XX/XXXX"
             formControlName="birthDate"
           />
+          <span
+          class="invalid-feedback"
+          *ngIf="
+            formRegisterData.controls['birthDate'].errors &&
+            formRegisterData.controls['birthDate'].touched
+          "
+          >O campo Data de Nascimento é obrigatório.</span
+        >
         </div>
       </div>
       <div formGroupName="address">

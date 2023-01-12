@@ -1,7 +1,15 @@
 <section id="address" class="my-5">
   <div class="container">
-    <h1 class="text-center mb-4">{{addressSectionData.sectionTitle}}</h1>
+    <h1 class="text-center mb-4">{{addressSectionData.sectionTitle | uppercase}}</h1>
     <p>{{addressSectionData.data.street}}, {{addressSectionData.data.number}}, {{addressSectionData.data.complement}}</p>
     <p>{{addressSectionData.data.district}}, {{addressSectionData.data.city}}/{{addressSectionData.data.state}}, CEP:{{addressSectionData.data.zipCode}}</p>
+    <p>
+      Data de fundação:
+      {{ addressSectionData.data.foundationDate | date : "dd/MM/yyyy" }}
+    </p>
+    <!-- <p>Faturamento anual: {{ addressData.data.annualRevenue | currency: 'BRL' }}</p> -->
+    <p>
+      Faturamento anual: {{ addressSectionData.data.annualRevenue | LocaleCurrencyPipe}}
+    </p>
   </div>
 </section>

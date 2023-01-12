@@ -39,15 +39,14 @@ export class RegisterComponent implements OnInit {
         district: new FormControl(null, [Validators.required, Validators.minLength(3)]),
         zipCode: new FormControl(null, [Validators.required, Validators.minLength(8)]),
       }),
-      phone: new FormControl(null, [Validators.required, Validators.minLength(11)]),
-      email: new FormControl(null, [Validators.required, Validators.pattern("^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$")]),
+      phone: new FormControl(null, [Validators.required, Validators.minLength(10), Validators.maxLength(11)]),
+      email: new FormControl(null, [Validators.required, Validators.email, Validators.pattern("^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$")]),
       user: new FormControl(null, [Validators.required]),
       password: new FormControl(null, [Validators.required]),
     });
   }
 
   public submitForm(): void {
-    //console.log(this.formRegisterData);
     this.formData = this.formRegisterData.getRawValue();
     this.formRegisterOutput.emit(this.formData);
     this.formRegisterData.reset();

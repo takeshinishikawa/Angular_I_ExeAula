@@ -14,6 +14,13 @@ import { AddressComponent } from './components/address/address.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { ButtonComponent } from './components/button/button.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { registerLocaleData } from '@angular/common';
+import { LOCALE_ID } from '@angular/core';
+import localePt from '@angular/common/locales/pt';
+import { ZipCodeMaskPipe } from './pipes/zip-code-mask.pipe';
+import { LocaleCurrencyPipe } from './pipes/locale-currency.pipe';
+
+registerLocaleData(localePt, 'pt');
 
 @NgModule({
   declarations: [
@@ -27,15 +34,20 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     AddressComponent,
     ContactComponent,
     ButtonComponent,
-    RegisterComponent
+    RegisterComponent,
+    ZipCodeMaskPipe,
+    LocaleCurrencyPipe
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+
   ],
-  providers: [],
+  providers: [
+    { provide: LOCALE_ID, useValue: 'pt-BR' }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
